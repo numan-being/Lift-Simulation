@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body {
+	font-family: "Poppins", sans-serif;
+}
+
+.data-input {
+    background-color: #adb5bd;
+    border-radius: 15px 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+.floor-input,
+.lift-input {
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.floor-input input,
+.lift-input input {
+    background-color: white;
+    border:#111;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #4a4e69;
+    border: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 22px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 24px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.button-floor{
+    justify-content: left;
+    align-items: flex-start;
+    background-color: #b3bbbd;
+    border: 1px solid;
+    margin: 2px;
+    border-radius:2px;
+    font-size: 18px;
+    padding:5px 5px;
+    margin-bottom: 5px;
+    display: inline;
+}
+
+.button-floor:hover {
+    transform:scale(1.2)
+}
+
+
+.lifts {
+    width: 60px;
+    height: 100px;
+    background-color: #212529;
+    color: #212529;
+    font-size:0;
+    position: absolute;
+    left: 0;
+    top:0;
+    border: 2px solid;
+    align-items: left;
+    border-radius: 5px;
+    content: none;
+    display: flex;
+}
+
+.lifts p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.floor {
+    height: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #e9ecef;
+    padding: 5px;
+    border-bottom: black 1px dotted;
+}
+
+.liftMotion{
+    transition-duration: 2s;
+}
+
+.lifts .gate {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    border: 1px solid #212529;
+    background-color: #adb5bd;
+}
+
+.gateLeft {
+    left: 0;
+}
+
+.gateRight {
+    right: 0;
+}
+
+.animateLiftsDoorsOnFloorStop  {
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-name: doorSimulation;
+}
+
+@keyframes doorSimulation {
+    from {
+        width: 50%;
+    }
+    50% {
+        width: 0%;
+    }
+    to {
+        width: 50%;
+    }
+}
